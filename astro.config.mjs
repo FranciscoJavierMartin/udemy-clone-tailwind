@@ -8,4 +8,6 @@ export default defineConfig({
   server: {
     port: 5173,
   },
+  site: 'https://franciscojaviermartin.github.io',
+  base: 'udemy-clone-tailwind',
 });
