@@ -19,20 +19,23 @@ import ChevronRight from './icons/chevron-right.astro';
         menuCategoriesDevelopmentIT: false,
       }'
   >
-    <div class='hover:text-udemy' @click='menuCategories =! menuCategories'>
+    <div
+      class='hover:cursor-pointer hover:text-udemy'
+      @click='menuCategories =! menuCategories'
+    >
       Categorias
     </div>
 
     <div
       x-show='menuCategories'
-      class='absolute mt-8 grid grid-cols-3 divide-x divide-gray-300 border border-gray-300'
+      class='absolute mt-8 grid min-h-[300px] grid-cols-3'
     >
-      <div x-show='menuCategories' class='w-[240px] p-4'>
-        <ul class='space-y-4'>
+      <div x-show='menuCategories' class='w-[240px] border border-gray-300'>
+        <ul>
           <li
             @click='menuCategoriesDevelopment = !menuCategoriesDevelopment'
             @click.away='menuCategoriesDevelopment = false'
-            class='flex items-center justify-between'
+            class='flex items-center justify-between p-4 hover:cursor-pointer hover:text-udemy'
           >
             Desarrollo
             <ChevronRight />
@@ -40,7 +43,7 @@ import ChevronRight from './icons/chevron-right.astro';
           <li
             @click='menuCategoriesBussiness = !menuCategoriesBussiness'
             @click.away='menuCategoriesBussiness = false'
-            class='flex items-center justify-between'
+            class='flex items-center justify-between px-4 py-1 hover:cursor-pointer hover:text-udemy'
           >
             Negocios
             <ChevronRight />
@@ -48,47 +51,75 @@ import ChevronRight from './icons/chevron-right.astro';
           <li
             @click='menuCategoriesFinance = !menuCategoriesFinance'
             @click.away='menuCategoriesFinance = false'
-            class='flex items-center justify-between'
+            class='flex items-center justify-between p-4 hover:cursor-pointer hover:text-udemy'
           >
             Finanzas y contabilidad
             <ChevronRight />
           </li>
         </ul>
       </div>
-      <div x-show='menuCategoriesDevelopment' class='p-4'>
-        <ul class='space-y-4'>
+      <div
+        x-show='menuCategoriesDevelopment'
+        class='border border-l-0 border-gray-300'
+      >
+        <ul>
           <li
             @mouseover='menuCategoriesDevelopmentWebDevelopment = true'
             @mouseout='menuCategoriesDevelopmentWebDevelopment = false'
-            class='flex items-center justify-between'
+            class='flex items-center justify-between p-4 hover:cursor-pointer hover:text-udemy'
           >
             Desarrollo web
           </li>
           <li
             @mouseover='menuCategoriesDevelopmentIT = true'
             @mouseout='menuCategoriesDevelopmentIT = false'
-            class='flex items-center justify-between'
+            class='flex items-center justify-between px-4 py-1 hover:cursor-pointer hover:text-udemy'
           >
             Ciencias de la información
           </li>
-          <li>Desarrollo móvil</li>
+          <li
+            class='flex items-center justify-between p-4 hover:cursor-pointer hover:text-udemy'
+          >
+            Desarrollo móvil
+          </li>
         </ul>
       </div>
-      <div x-show='menuCategoriesBussiness' class='p-4'>
-        <ul class='space-y-4'>
-          <li>Comunicación</li>
-          <li>Emprendimiento</li>
-          <li>Gestión empresarial</li>
+      <div
+        x-show='menuCategoriesBussiness'
+        class='border border-l-0 border-gray-300'
+      >
+        <ul>
+          <li class='p-4 hover:cursor-pointer hover:text-udemy'>
+            Comunicación
+          </li>
+          <li class='px-4 py-1 hover:cursor-pointer hover:text-udemy'>
+            Emprendimiento
+          </li>
+          <li class='p-4 hover:cursor-pointer hover:text-udemy'>
+            Gestión empresarial
+          </li>
         </ul>
       </div>
-      <div x-show='menuCategoriesFinance' class='p-4'>
-        <ul class='space-y-4'>
-          <li>Contabilidad</li>
-          <li>Cumplimiento</li>
-          <li>Criptomonedas</li>
+      <div
+        x-show='menuCategoriesFinance'
+        class='border border-l-0 border-gray-300'
+      >
+        <ul>
+          <li class='p-4 hover:cursor-pointer hover:text-udemy'>
+            Contabilidad
+          </li>
+          <li class='px-4 py-1 hover:cursor-pointer hover:text-udemy'>
+            Cumplimiento
+          </li>
+          <li class='p-4 hover:cursor-pointer hover:text-udemy'>
+            Criptomonedas
+          </li>
         </ul>
       </div>
-      <div x-show='menuCategoriesDevelopmentWebDevelopment' class='p-4'>
+      <div
+        x-show='menuCategoriesDevelopmentWebDevelopment'
+        class='border border-l-0 border-gray-300 p-4'
+      >
         <ul class='space-y-4'>
           <li class='font-medium'>Temas populares</li>
           <li>TypeScript</li>
@@ -96,7 +127,10 @@ import ChevronRight from './icons/chevron-right.astro';
           <li>Qwik.js</li>
         </ul>
       </div>
-      <div x-show='menuCategoriesDevelopmentIT' class='p-4'>
+      <div
+        x-show='menuCategoriesDevelopmentIT'
+        class='border border-l-0 border-gray-300 p-4'
+      >
         <ul class='space-y-4'>
           <li class='font-medium'>Temas populares</li>
           <li>Python</li>
@@ -104,28 +138,6 @@ import ChevronRight from './icons/chevron-right.astro';
           <li>Aprendizaje profundo</li>
         </ul>
       </div>
-    </div>
-
-    <div
-      x-show='menuCategories'
-      class='absolute mt-8 hidden border border-gray-300 p-4 shadow-xl'
-    >
-      <ul class='space-y-4'>
-        <li x-data='{menuCategoriesDevelopment: false}'>
-          <div @click='menuCategoriesDevelopment=!menuCategoriesDevelopment'>
-            Desarrollo
-          </div>
-          <div x-show='menuCategoriesDevelopment' class=''>
-            <ul>
-              <li>Desarrollo web</li>
-              <li>Ciencias de la información</li>
-              <li>Desarrollo móvil</li>
-            </ul>
-          </div>
-        </li>
-        <li>Negocios</li>
-        <li>Finanzas y contabilidad</li>
-      </ul>
     </div>
   </div>
   <!-- End of categories -->
