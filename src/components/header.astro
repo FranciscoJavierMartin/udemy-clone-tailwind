@@ -8,7 +8,36 @@
     alt='Udemy logo'
     class='h-8'
   />
-  <div class='hover:text-udemy'>Categorias</div>
+  <!-- Categories -->
+  <div x-data='{ menuCategories: true, }'>
+    <div class='hover:text-udemy' @click='menuCategories=!menuCategories'>
+      Categorias
+    </div>
+
+    <div
+      x-show='menuCategories'
+      class='absolute mt-8 border border-gray-300 p-4 shadow-xl'
+    >
+      <ul class='space-y-4'>
+        <li x-data='{menuCategoriesDevelopment: false}'>
+          <div @click='menuCategoriesDevelopment=!menuCategoriesDevelopment'>
+            Desarrollo
+          </div>
+          <div x-show='menuCategoriesDevelopment' class=''>
+            <ul>
+              <li>Desarrollo web</li>
+              <li>Ciencias de la información</li>
+              <li>Desarrollo móvil</li>
+            </ul>
+          </div>
+        </li>
+        <li>Negocios</li>
+        <li>Finanzas y contabilidad</li>
+      </ul>
+    </div>
+  </div>
+  <!-- End of categories -->
+  <!-- Search bar -->
   <div
     class='flex grow items-center gap-3 rounded-full border border-primary bg-gray-50 p-3 text-gray-400'
   >
@@ -26,11 +55,23 @@
         d='m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z'
       ></path>
     </svg>
-    <div class='text-gray-500'>Buscar cualquier cosa</div>
+    <!-- TODO: Remove border when focus -->
+    <input
+      class='w-full border-0 bg-gray-50 placeholder-gray-500'
+      placeholder='Buscar cualquier cosa'
+    />
   </div>
+  <!-- End of Search bar -->
+  <!-- Udemy Business -->
   <div class='hover:text-udemy'>Udemy Business</div>
+  <!-- End of Udemy Business -->
+  <!-- Instructor -->
   <div class='hover:text-udemy'>Instructor</div>
+  <!-- End of Instructor -->
+  <!-- My learning -->
   <div class='hover:text-udemy'>Mi aprendizaje</div>
+  <!-- End of My learning -->
+  <!-- Favorites -->
   <div>
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -47,6 +88,8 @@
       ></path>
     </svg>
   </div>
+  <!-- End of favorites -->
+  <!-- Shopping cart -->
   <div>
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -63,6 +106,8 @@
       ></path>
     </svg>
   </div>
+  <!-- End of shopping cart -->
+  <!-- Notifications -->
   <div>
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -79,6 +124,8 @@
       ></path>
     </svg>
   </div>
+  <!-- End of Notifications -->
+  <!-- Profile -->
   <div>
     <img
       src='/udemy-clone-tailwind/images/ibon-azkoitia.jpg'
@@ -86,4 +133,5 @@
       class='size-8 rounded-full border border-gray-300'
     />
   </div>
+  <!-- End of profile -->
 </header>
