@@ -1,5 +1,5 @@
 ---
-
+import ChevronRight from './icons/chevron-right.astro';
 ---
 
 <header class='flex flex-wrap items-center gap-6 px-8 py-3 text-sm'>
@@ -9,14 +9,106 @@
     class='h-8'
   />
   <!-- Categories -->
-  <div x-data='{ menuCategories: true, }'>
-    <div class='hover:text-udemy' @click='menuCategories=!menuCategories'>
+  <div
+    x-data='{ 
+        menuCategories: true, 
+        menuCategoriesDevelopment: false,
+        menuCategoriesBussiness: false, 
+        menuCategoriesFinance: false,
+        menuCategoriesDevelopmentWebDevelopment: false,
+        menuCategoriesDevelopmentIT: false,
+      }'
+  >
+    <div class='hover:text-udemy' @click='menuCategories =! menuCategories'>
       Categorias
     </div>
 
     <div
       x-show='menuCategories'
-      class='absolute mt-8 border border-gray-300 p-4 shadow-xl'
+      class='absolute mt-8 grid grid-cols-3 divide-x divide-gray-300 border border-gray-300'
+    >
+      <div x-show='menuCategories' class='w-[240px] p-4'>
+        <ul class='space-y-4'>
+          <li
+            @click='menuCategoriesDevelopment = !menuCategoriesDevelopment'
+            @click.away='menuCategoriesDevelopment = false'
+            class='flex items-center justify-between'
+          >
+            Desarrollo
+            <ChevronRight />
+          </li>
+          <li
+            @click='menuCategoriesBussiness = !menuCategoriesBussiness'
+            @click.away='menuCategoriesBussiness = false'
+            class='flex items-center justify-between'
+          >
+            Negocios
+            <ChevronRight />
+          </li>
+          <li
+            @click='menuCategoriesFinance = !menuCategoriesFinance'
+            @click.away='menuCategoriesFinance = false'
+            class='flex items-center justify-between'
+          >
+            Finanzas y contabilidad
+            <ChevronRight />
+          </li>
+        </ul>
+      </div>
+      <div x-show='menuCategoriesDevelopment' class='p-4'>
+        <ul class='space-y-4'>
+          <li
+            @mouseover='menuCategoriesDevelopmentWebDevelopment = true'
+            @mouseout='menuCategoriesDevelopmentWebDevelopment = false'
+            class='flex items-center justify-between'
+          >
+            Desarrollo web
+          </li>
+          <li
+            @mouseover='menuCategoriesDevelopmentIT = true'
+            @mouseout='menuCategoriesDevelopmentIT = false'
+            class='flex items-center justify-between'
+          >
+            Ciencias de la información
+          </li>
+          <li>Desarrollo móvil</li>
+        </ul>
+      </div>
+      <div x-show='menuCategoriesBussiness' class='p-4'>
+        <ul class='space-y-4'>
+          <li>Comunicación</li>
+          <li>Emprendimiento</li>
+          <li>Gestión empresarial</li>
+        </ul>
+      </div>
+      <div x-show='menuCategoriesFinance' class='p-4'>
+        <ul class='space-y-4'>
+          <li>Contabilidad</li>
+          <li>Cumplimiento</li>
+          <li>Criptomonedas</li>
+        </ul>
+      </div>
+      <div x-show='menuCategoriesDevelopmentWebDevelopment' class='p-4'>
+        <ul class='space-y-4'>
+          <li class='font-medium'>Temas populares</li>
+          <li>TypeScript</li>
+          <li>React.js</li>
+          <li>Qwik.js</li>
+        </ul>
+      </div>
+      <div x-show='menuCategoriesDevelopmentIT' class='p-4'>
+        <ul class='space-y-4'>
+          <li class='font-medium'>Temas populares</li>
+          <li>Python</li>
+          <li>Aprendizaje automático</li>
+          <li>Aprendizaje profundo</li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      x-show='menuCategories'
+      class='absolute mt-8 hidden border border-gray-300 p-4 shadow-xl'
     >
       <ul class='space-y-4'>
         <li x-data='{menuCategoriesDevelopment: false}'>
