@@ -519,7 +519,7 @@ import ChevronRight from './icons/chevron-right.astro';
     <div class='w-[380px] border border-gray-300'>
       <div class='flex items-center justify-between p-4'>
         <div class='text-lg font-semibold'>Notificaciones</div>
-        <div class='font-medium text-udemy'>Configuración</div>
+        <div class='font-semibold text-udemy'>Configuración</div>
       </div>
       <div class='grid grid-cols-2 text-center'>
         <div
@@ -533,9 +533,63 @@ import ChevronRight from './icons/chevron-right.astro';
           Estudiante
         </div>
       </div>
-      <div>
-        <div class='flex gap-4'>
-         
+      <div class='flex flex-col divide-y divide-gray-300'>
+        <a href='#' class='flex gap-3 p-4'>
+          <img
+            src='/udemy-clone-tailwind/images/header/notificaciones/logo-notificacion.jpg'
+            alt='Notification logo'
+            class='size-16 rounded-full border border-gray-300'
+          />
+          <div>
+            <p class='line-clamp-2 font-semibold leading-tight'>
+              John Doe ha hecho un anuncio: Hello my friends, I have updated the
+              sections 12 and 13 about video upload.
+            </p>
+            <p class='my-1 text-gray-500'>Hace 12 horas</p>
+          </div>
+        </a>
+
+        <a href='#' class='flex gap-3 p-4'>
+          <img
+            src='/udemy-clone-tailwind/images/header/notificaciones/logo-notificacion.jpg'
+            alt='Notification logo'
+            class='size-16 rounded-full border border-gray-300'
+          />
+          <div>
+            <p class='line-clamp-2 font-semibold leading-tight'>
+              Mary Sue ha hecho un anuncio: Hello everyone, I have added two new
+              sections to the course.
+            </p>
+            <p class='my-1 text-gray-500'>Hace 1 día</p>
+          </div>
+        </a>
+
+        <a href='#' class='flex gap-3 p-4'>
+          <img
+            src='/udemy-clone-tailwind/images/header/notificaciones/logo-notificacion.jpg'
+            alt='Notification logo'
+            class='size-16 rounded-full border border-gray-300'
+          />
+          <div>
+            <p class='line-clamp-2 font-semibold leading-tight'>
+              Gary Stu ha hecho un anuncio: Hello my friends, new course launch.
+              This time about QwikJS, more than 40 hours of content.
+            </p>
+            <p class='my-1 text-gray-500'>Hace 3 día</p>
+          </div>
+        </a>
+        <div class='flex items-center justify-between p-4'>
+          <div
+            class='text-base font-semibold text-udemy opacity-50 hover:cursor-not-allowed'
+          >
+            Marcar como leído
+          </div>
+          <a
+            href='#'
+            class='border border-primary px-6 py-3 text-base font-semibold'
+          >
+            Ver todo
+          </a>
         </div>
       </div>
       <div class='hidden'>Sin notifactiones</div>
