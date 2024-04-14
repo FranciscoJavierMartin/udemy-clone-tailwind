@@ -294,8 +294,9 @@ import ChevronRight from './icons/chevron-right.astro';
   </div>
   <!-- End of My learning -->
   <!-- Favorites -->
+  <!-- TODO: Refactor into components -->
   <div
-    x-data='{menuWishList: true}'
+    x-data='{menuWishList: false}'
     class='relative'
     @click.away='menuWishList = false'
   >
@@ -329,7 +330,7 @@ import ChevronRight from './icons/chevron-right.astro';
             <p class='line-clamp-2 font-semibold leading-tight'>
               The Nuxt 3 Bootcamp - The Complete Developer Guide
             </p>
-            <p class='my-1 text-xs text-gray-500'>Instructor name</p>
+            <p class='my-1 text-xs text-gray-500'>Laith Harb</p>
             <div>
               <span class='mr-2 font-semibold'>11,99 €</span>
               <span class='text-gray-500 line-through'>99,99 €</span>
@@ -426,6 +427,59 @@ import ChevronRight from './icons/chevron-right.astro';
         d='M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z'
       ></path>
     </svg>
+    <div class='w-[300px] divide-y divide-gray-300 border border-gray-300'>
+      <div>
+        <a href='#' class='flex gap-3 p-4'>
+          <img
+            src='/udemy-clone-tailwind/images/header/carrito/curso1.png'
+            alt='Playwright con Typescript'
+            class='size-16 object-cover'
+          />
+          <div>
+            <p class='line-clamp-2 font-semibold leading-tight'>
+              Playwright con Typescript
+            </p>
+            <p class='my-1 line-clamp-1 text-xs text-gray-500'>
+              Rodrigo Villanueva Nieto
+            </p>
+            <div>
+              <span class='mr-2 font-semibold'>11,99 €</span>
+              <span class='text-gray-500 line-through'>99,99 €</span>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div>
+        <a href='#' class='flex gap-3 p-4'>
+          <img
+            src='/udemy-clone-tailwind/images/header/carrito/curso2.png'
+            alt='The Complete Pandas Bootcamp 2024: Data Science with Python'
+            class='size-16 object-cover'
+          />
+          <div>
+            <p class='line-clamp-2 font-semibold leading-tight'>
+              The Complete Pandas Bootcamp 2024: Data Science with Python
+            </p>
+            <p class='my-1 line-clamp-1 text-xs text-gray-500'>
+              Alexander Hagmann
+            </p>
+            <div>
+              <span class='mr-2 font-semibold'>11,99 €</span>
+              <span class='text-gray-500 line-through'>99,99 €</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class='p-4 text-center'>
+        <a
+          href='#'
+          class='block bg-primary p-4 text-base text-white hover:bg-gray-100'
+        >
+          Ir a la lista de deseos
+        </a>
+      </div>
+    </div>
   </div>
   <!-- End of shopping cart -->
   <!-- Notifications -->
