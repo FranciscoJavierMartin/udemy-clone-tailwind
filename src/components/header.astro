@@ -527,13 +527,21 @@ import ChevronRight from './icons/chevron-right.astro';
       </div>
       <div class='grid grid-cols-2 text-center'>
         <div
-          class='border-b-2 border-primary p-2 font-medium hover:cursor-pointer'
+          class='border-b-2 p-2 hover:cursor-pointer hover:font-medium hover:text-primary'
+          :class="{
+            'border-primary font-medium':menuNotificationsTabs === 0,
+            'text-gray-600 border-gray-300':menuNotificationsTabs !== 0,
+          }"
           @click='menuNotificationsTabs = 0'
         >
           Instructor
         </div>
         <div
-          class='border-b-2 border-gray-300 p-2 text-gray-600 hover:cursor-pointer hover:font-medium hover:text-primary'
+          class='border-b-2 p-2 hover:cursor-pointer hover:font-medium hover:text-primary'
+          :class="{
+          'border-primary font-medium':menuNotificationsTabs === 1,
+          'text-gray-600 border-gray-300':menuNotificationsTabs !== 1,
+        }"
           @click='menuNotificationsTabs = 1'
         >
           Estudiante
