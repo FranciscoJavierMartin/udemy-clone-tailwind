@@ -507,7 +507,7 @@ import ChevronRight from './icons/chevron-right.astro';
   <!-- Notifications -->
   <!-- TODO: Refactor into components -->
   <div
-    x-data='{menuNotifications: true}'
+    x-data='{menuNotifications: false}'
     class='relative'
     @click.away='menuNotifications = false'
   >
@@ -640,6 +640,32 @@ import ChevronRight from './icons/chevron-right.astro';
       alt='User avatar'
       class='size-8 rounded-full border border-gray-300'
     />
+    <div class='w-[260px] divide-y divide-gray-300 border border-gray-300'>
+      <div class='flex items-center gap-2 p-4'>
+        <img
+          src='/udemy-clone-tailwind/images/ibon-azkoitia.jpg'
+          alt='User avatar'
+          class='size-16 rounded-full border border-gray-300'
+        />
+        <div>
+          <div class='text-base font-semibold'>John Doe</div>
+          <div class='text-xs text-gray-600'>john@doe.com</div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <a href='#' class='p-4'> Mi aprendizaje </a>
+        </div>
+        <div>
+          <a href='#' class='flex items-center justify-between p-4'>
+            <div>Mi cesta</div>
+            <span>2</span>
+          </a>
+        </div>
+        <div><a href='#' class='p-4'>Lista de deseos</a></div>
+        <div><a href='#' class='p-4'>Panel del instructor</a></div>
+      </div>
+    </div>
   </div>
   <!-- End of profile -->
 </header>
