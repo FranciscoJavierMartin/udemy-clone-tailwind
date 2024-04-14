@@ -9,9 +9,10 @@ import ChevronRight from './icons/chevron-right.astro';
     class='h-8'
   />
   <!-- Categories -->
+  <!-- TODO: Refactor into components -->
   <div
     x-data='{ 
-        menuCategories: true, 
+        menuCategories: false, 
         menuCategoriesDevelopment: false,
         menuCategoriesBussiness: false, 
         menuCategoriesFinance: false,
@@ -167,7 +168,35 @@ import ChevronRight from './icons/chevron-right.astro';
   </div>
   <!-- End of Search bar -->
   <!-- Udemy Business -->
-  <div class='hover:text-udemy'>Udemy Business</div>
+  <div
+    x-data='{menuUdemyBusiness: false}'
+    class='relative'
+    @click.away='menuUdemyBusiness = false'
+  >
+    <div
+      class='hover:cursor-pointer hover:text-udemy'
+      @mouseover='menuUdemyBusiness = true'
+      @click='menuUdemyBusiness = !menuUdemyBusiness'
+    >
+      Udemy Business
+    </div>
+
+    <div
+      x-show='menuUdemyBusiness'
+      class='absolute right-0 mt-8 w-[300px] border border-gray-300 p-4 text-center'
+    >
+      <div class='text-xl font-semibold'>
+        Dale a tu equipo acceso a más de 24.00 de los mejores cursos de Udemy en
+        cualquier momento y lugar.
+      </div>
+      <a
+        href='#'
+        class='mt-4 block bg-primary p-4 text-lg text-white hover:bg-primary-light'
+      >
+        Prueba Udemy Business
+      </a>
+    </div>
+  </div>
   <!-- End of Udemy Business -->
   <!-- Instructor -->
   <div class='hover:text-udemy'>Instructor</div>
