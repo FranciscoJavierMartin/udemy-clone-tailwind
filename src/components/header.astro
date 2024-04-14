@@ -2,6 +2,7 @@
 import ChevronRight from './icons/chevron-right.astro';
 ---
 
+<!-- TODO: When a menu appears, then hide the rest -->
 <header class='flex flex-wrap items-center gap-6 px-8 py-3 text-sm'>
   <img
     src='/udemy-clone-tailwind/images/logo-udemy.svg'
@@ -204,10 +205,24 @@ import ChevronRight from './icons/chevron-right.astro';
   </div>
   <!-- End of Instructor -->
   <!-- My learning -->
-  <div>
-    <div class='hover:cursor-pointer hover:text-udemy'>Mi aprendizaje</div>
-    <div class='w-[300px] divide-y border border-gray-300'>
-      <div class='flex gap-3 p-4'>
+  <!-- TODO: Refactor into components -->
+  <div
+    x-data='{menuMyLearning: true}'
+    class='relative'
+    @click.away='menuMyLearning = false'
+  >
+    <div
+      @mouseover='menuMyLearning = true'
+      @click='menuMyLearning = !menuMyLearning'
+      class='hover:cursor-pointer hover:text-udemy'
+    >
+      Mi aprendizaje
+    </div>
+    <div
+      x-show='menuMyLearning'
+      class='absolute right-0 mt-8 w-[300px] divide-y border border-gray-300'
+    >
+      <a href='#' class='flex gap-3 p-4'>
         <img
           src='/udemy-clone-tailwind/images/header/aprendizaje/curso1.png'
           alt='Aprende Tailwind CSS con ejemplos reales'
@@ -221,8 +236,8 @@ import ChevronRight from './icons/chevron-right.astro';
             <div class='h-full w-2/5 bg-udemy'></div>
           </div>
         </div>
-      </div>
-      <div class='flex gap-3 p-4'>
+      </a>
+      <a href='#' class='flex gap-3 p-4'>
         <img
           src='/udemy-clone-tailwind/images/header/aprendizaje/curso2.png'
           alt='React Avançado: Crie aplicaçaões com NextJS, Strapi e mais'
@@ -236,8 +251,8 @@ import ChevronRight from './icons/chevron-right.astro';
             <div class='h-full w-3/5 bg-udemy'></div>
           </div>
         </div>
-      </div>
-      <div class='flex gap-3 p-4'>
+      </a>
+      <a href='#' class='flex gap-3 p-4'>
         <img
           src='/udemy-clone-tailwind/images/header/aprendizaje/curso3.png'
           alt='Microservices with NodeJS, React, TypeScript and Kubernetes'
@@ -251,8 +266,8 @@ import ChevronRight from './icons/chevron-right.astro';
             <div class='h-full w-2/12 bg-udemy'></div>
           </div>
         </div>
-      </div>
-      <div class='flex gap-3 p-4'>
+      </a>
+      <a href='#' class='flex gap-3 p-4'>
         <img
           src='/udemy-clone-tailwind/images/header/aprendizaje/curso4.png'
           alt='Build an app with React, Redux and Firestore from scratch'
@@ -266,7 +281,7 @@ import ChevronRight from './icons/chevron-right.astro';
             <div class='h-full w-4/5 bg-udemy'></div>
           </div>
         </div>
-      </div>
+      </a>
       <div class='p-4 text-center'>
         <a
           href='#'
