@@ -308,6 +308,7 @@ import ChevronRight from './icons/chevron-right.astro';
       stroke='currentColor'
       class='size-6 hover:cursor-pointer hover:text-udemy'
       @mouseover='menuWishList = !menuWishList'
+      @click='menuWishList = true'
     >
       <path
         stroke-linecap='round'
@@ -418,7 +419,11 @@ import ChevronRight from './icons/chevron-right.astro';
     @click.away='menuShoppingCart = false'
     class='relative'
   >
-    <span class='relative' @mouseover='menuShoppingCart = !menuShoppingCart'>
+    <span
+      class='relative'
+      @mouseover='menuShoppingCart = !menuShoppingCart'
+      @click='menuShoppingCart = true'
+    >
       <svg
         xmlns='http://www.w3.org/2000/svg'
         fill='none'
@@ -501,14 +506,20 @@ import ChevronRight from './icons/chevron-right.astro';
   <!-- End of shopping cart -->
   <!-- Notifications -->
   <!-- TODO: Refactor into components -->
-  <div x-data='{menuNotifications: true}'>
+  <div
+    x-data='{menuNotifications: true}'
+    class='relative'
+    @click.away='menuNotifications = false'
+  >
     <svg
       xmlns='http://www.w3.org/2000/svg'
       fill='none'
       viewBox='0 0 24 24'
       stroke-width='2'
       stroke='currentColor'
-      class='size-6 hover:text-udemy'
+      class='size-6 hover:cursor-pointer hover:text-udemy'
+      @mouseover='menuNotifications = !menuNotifications'
+      @click='menuNotifications = true'
     >
       <path
         stroke-linecap='round'
@@ -517,7 +528,7 @@ import ChevronRight from './icons/chevron-right.astro';
       ></path>
     </svg>
     <div
-      class='w-[380px] border border-gray-300'
+      class='absolute right-0 mt-8 w-[380px] border border-gray-300'
       x-data='{menuNotificationsTabs: 0}'
       x-show='menuNotifications'
     >
@@ -603,7 +614,7 @@ import ChevronRight from './icons/chevron-right.astro';
           </div>
           <a
             href='#'
-            class='border border-primary px-6 py-3 text-base font-semibold'
+            class='border border-primary px-6 py-3 text-base font-semibold hover:bg-gray-200'
           >
             Ver todo
           </a>
