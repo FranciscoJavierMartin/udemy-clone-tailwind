@@ -206,12 +206,12 @@ import ChevronRight from './icons/chevron-right.astro';
   <!-- My learning -->
   <div>
     <div class='hover:cursor-pointer hover:text-udemy'>Mi aprendizaje</div>
-    <div class='w-[300px] border border-gray-300 p-4'>
-      <div class='flex gap-3'>
+    <div class='w-[300px] divide-y border border-gray-300'>
+      <div class='flex gap-3 p-4'>
         <img
           src='/udemy-clone-tailwind/images/header/aprendizaje/curso1.png'
           alt='Aprende Tailwind CSS con ejemplos reales'
-          class='h-16 w-16 object-cover'
+          class='size-16 object-cover'
         />
         <div>
           <p class='font-semibold leading-tight'>
@@ -222,12 +222,59 @@ import ChevronRight from './icons/chevron-right.astro';
           </div>
         </div>
       </div>
-      <a
-        href='#'
-        class='mt-4 block bg-primary p-4 text-lg text-white hover:bg-primary-light'
-      >
-        Ir a mi aprendizaje
-      </a>
+      <div class='flex gap-3 p-4'>
+        <img
+          src='/udemy-clone-tailwind/images/header/aprendizaje/curso2.png'
+          alt='React Avançado: Crie aplicaçaões com NextJS, Strapi e mais'
+          class='size-16 object-cover'
+        />
+        <div>
+          <p class='font-semibold leading-tight'>
+            React Avançado: Crie aplicaçaões com NextJS, Strapi e mais
+          </p>
+          <div class='mt-2 h-2 bg-gray-300'>
+            <div class='h-full w-3/5 bg-udemy'></div>
+          </div>
+        </div>
+      </div>
+      <div class='flex gap-3 p-4'>
+        <img
+          src='/udemy-clone-tailwind/images/header/aprendizaje/curso3.png'
+          alt='Microservices with NodeJS, React, TypeScript and Kubernetes'
+          class='size-16 object-cover'
+        />
+        <div>
+          <p class='font-semibold leading-tight'>
+            Microservices with NodeJS, React, TypeScript and Kubernetes
+          </p>
+          <div class='mt-2 h-2 bg-gray-300'>
+            <div class='h-full w-2/12 bg-udemy'></div>
+          </div>
+        </div>
+      </div>
+      <div class='flex gap-3 p-4'>
+        <img
+          src='/udemy-clone-tailwind/images/header/aprendizaje/curso4.png'
+          alt='Build an app with React, Redux and Firestore from scratch'
+          class='size-16 object-cover'
+        />
+        <div>
+          <p class='font-semibold leading-tight'>
+            Build an app with React, Redux and Firestore from scratch
+          </p>
+          <div class='mt-2 h-2 bg-gray-300'>
+            <div class='h-full w-4/5 bg-udemy'></div>
+          </div>
+        </div>
+      </div>
+      <div class='p-4 text-center'>
+        <a
+          href='#'
+          class='block bg-primary p-4 text-lg text-white hover:bg-primary-light'
+        >
+          Ir a mi aprendizaje
+        </a>
+      </div>
     </div>
   </div>
   <!-- End of My learning -->
