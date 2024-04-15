@@ -1,0 +1,44 @@
+---
+
+---
+
+<div
+  x-data='{
+    menuCategoriesDevelopment: false,
+    menuCategoriesBusiness: false
+  }'
+>
+  <div
+    class='flex items-center justify-center gap-8 border-t border-gray-300 p-4 text-sm shadow-lg'
+  >
+    <div class='hover:cursor-pointer hover:text-udemy'>Desarrollo</div>
+    <div class='hover:cursor-pointer hover:text-udemy'>Negocios</div>
+    <div class='hover:cursor-pointer hover:text-udemy'>
+      Finanzas y contabilidad
+    </div>
+  </div>
+
+  <nav
+    x-show='menuCategoriesDevelopment'
+    class='flex items-center justify-center gap-8 bg-primary p-3 text-sm text-white'
+  >
+    <div class='hover:cursor-pointer hover:text-[#a7aada]'>Desarrollo web</div>
+    <div class='hover:cursor-pointer hover:text-[#a7aada]'>
+      Desarrollo móvil
+    </div>
+    <div class='hover:cursor-pointer hover:text-[#a7aada]'>
+      Lenguajes de programación
+    </div>
+  </nav>
+
+  <nav
+    x-show='menuCategoriesBusiness'
+    class='flex items-center justify-center gap-8 bg-primary p-3 text-sm text-white'
+  >
+    <div class='hover:cursor-pointer hover:text-[#a7aada]'>Emprendimiento</div>
+    <div class='hover:cursor-pointer hover:text-[#a7aada]'>Comunicación</div>
+    <div class='hover:cursor-pointer hover:text-[#a7aada]'>
+      Gestión empresarial
+    </div>
+  </nav>
+</div>
