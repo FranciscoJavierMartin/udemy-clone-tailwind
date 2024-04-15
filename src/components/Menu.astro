@@ -26,7 +26,11 @@
     >
       Negocios
     </div>
-    <div class='hover:cursor-pointer hover:text-udemy'>
+    <div
+      class='hover:cursor-pointer hover:text-udemy'
+      @click='menuCategoriesFinance = !menuCategoriesFinance'
+      @click.away='menuCategoriesFinance = false'
+    >
       Finanzas y contabilidad
     </div>
   </div>
@@ -53,5 +57,18 @@
     <div class='hover:cursor-pointer hover:text-[#a7aada]'>
       Gestión empresarial
     </div>
+  </nav>
+
+  <nav
+    x-show='menuCategoriesFinance'
+    class='flex items-center justify-center gap-8 bg-primary p-3 text-sm text-white'
+  >
+    <div class='hover:cursor-pointer hover:text-[#a7aada]'>
+      Contabilidad y tesorería
+    </div>
+    <div class='hover:cursor-pointer hover:text-[#a7aada]'>
+      Criptomonedas y blockchain
+    </div>
+    <div class='hover:cursor-pointer hover:text-[#a7aada]'>Finanzas</div>
   </nav>
 </div>
