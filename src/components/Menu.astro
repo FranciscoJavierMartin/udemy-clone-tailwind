@@ -5,14 +5,27 @@
 <div
   x-data='{
     menuCategoriesDevelopment: false,
-    menuCategoriesBusiness: false
+    menuCategoriesBusiness: false,
+    menuCategoriesFinance: false,
   }'
 >
   <div
     class='flex items-center justify-center gap-8 border-t border-gray-300 p-4 text-sm shadow-lg'
   >
-    <div class='hover:cursor-pointer hover:text-udemy'>Desarrollo</div>
-    <div class='hover:cursor-pointer hover:text-udemy'>Negocios</div>
+    <div
+      class='hover:cursor-pointer hover:text-udemy'
+      @click='menuCategoriesDevelopment = !menuCategoriesDevelopment'
+      @click.away='menuCategoriesDevelopment = false'
+    >
+      Desarrollo
+    </div>
+    <div
+      class='hover:cursor-pointer hover:text-udemy'
+      @click='menuCategoriesBusiness = !menuCategoriesBusiness'
+      @click.away='menuCategoriesBusiness = false'
+    >
+      Negocios
+    </div>
     <div class='hover:cursor-pointer hover:text-udemy'>
       Finanzas y contabilidad
     </div>
