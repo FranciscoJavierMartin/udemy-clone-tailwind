@@ -643,6 +643,8 @@ import ChevronRight from './icons/chevron-right.astro';
       src='/udemy-clone-tailwind/images/ibon-azkoitia.jpg'
       alt='User avatar'
       class='size-8 rounded-full border border-gray-300'
+      @mouseover='menuUser = true'
+      @click='menuUser = ! menuUser'
     />
     <div
       x-show='menuUser'
