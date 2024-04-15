@@ -4,32 +4,35 @@
 
 <div
   x-data='{
-    menuCategoriesDevelopment: false,
+    menuCategoriesDevelopment: true,
     menuCategoriesBusiness: false,
     menuCategoriesFinance: false,
   }'
 >
   <div
-    class='flex items-center justify-center gap-8 border-t border-gray-300 p-4 text-sm shadow-lg'
+    class='flex items-center justify-center gap-8 border-t border-gray-300 text-sm shadow-lg'
   >
     <div
-      class='hover:cursor-pointer hover:text-udemy'
       @click='menuCategoriesDevelopment = !menuCategoriesDevelopment'
       @click.away='menuCategoriesDevelopment = false'
+      class='relative py-4 hover:cursor-pointer hover:text-udemy'
+      :class="{'menu-category-active': menuCategoriesDevelopment}"
     >
       Desarrollo
     </div>
     <div
-      class='hover:cursor-pointer hover:text-udemy'
       @click='menuCategoriesBusiness = !menuCategoriesBusiness'
       @click.away='menuCategoriesBusiness = false'
+      class='relative py-4 hover:cursor-pointer hover:text-udemy'
+      :class="{'menu-category-active': menuCategoriesBusiness}"
     >
       Negocios
     </div>
     <div
-      class='hover:cursor-pointer hover:text-udemy'
       @click='menuCategoriesFinance = !menuCategoriesFinance'
       @click.away='menuCategoriesFinance = false'
+      class='relative py-4 hover:cursor-pointer hover:text-udemy'
+      :class="{'menu-category-active': menuCategoriesFinance}"
     >
       Finanzas y contabilidad
     </div>
