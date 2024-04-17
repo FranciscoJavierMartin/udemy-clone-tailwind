@@ -8,11 +8,55 @@ import Course from './Course.astro';
     Elige entre más de 210.000 cursos de video en linea con nuevo contenido casa
     mes
   </p>
-  <div>
+  <div
+    x-data=`{
+    pythonCourses: true,
+    excelCourses: false,
+    webCourses: false,
+    javaScriptCourses: false,
+    ITCourses: false,
+  }`
+  >
     <div>
-      <div class='px-2 py-4 font-semibold'>Python</div>
+      <div class='flex gap-3'>
+        <div
+          class='course-tabs'
+          :class="{'course-tabs-active': pythonCourses}"
+          @click='pythonCourses = true; excelCourses = false; webCourses = false; javaScriptCourses = false; ITCourses = false'
+        >
+          Python
+        </div>
+        <div
+          class='course-tabs'
+          :class="{'course-tabs-active': excelCourses}"
+          @click='pythonCourses = false; excelCourses = true; webCourses = false; javaScriptCourses = false; ITCourses = false'
+        >
+          Excel
+        </div>
+        <div
+          class='course-tabs'
+          :class="{'course-tabs-active': webCourses}"
+          @click='pythonCourses = false; excelCourses = false; webCourses = true; javaScriptCourses = false; ITCourses = false'
+        >
+          Desarrollo web
+        </div>
+        <div
+          class='course-tabs'
+          :class="{'course-tabs-active': javaScriptCourses}"
+          @click='pythonCourses = false; excelCourses = false; webCourses = false; javaScriptCourses = true; ITCourses = false'
+        >
+          JavaScript
+        </div>
+        <div
+          class='course-tabs'
+          :class="{'course-tabs-active': ITCourses}"
+          @click='pythonCourses = false; excelCourses = false; webCourses = false; javaScriptCourses = false; ITCourses = true'
+        >
+          Ciencias de la información
+        </div>
+      </div>
     </div>
-    <div class='border-2 border-gray-300 p-8'>
+    <div x-show='pythonCourses' class='border-2 border-gray-300 p-8'>
       <h3 class='font-text text-2xl font-bold text-gray-900'>
         Amplía tus oportunidades profesionales con Python
       </h3>
