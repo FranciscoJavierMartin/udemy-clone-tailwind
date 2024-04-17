@@ -2,8 +2,12 @@
 
 ---
 
-<div class='relative'>
-  <div class='relative z-10'>
+<div class='relative' x-data='{tooltip: false}'>
+  <div
+    class='relative z-10'
+    @click='tooltip = !tooltip'
+    @mouseover='tooltip = true'
+  >
     <img
       src='https://img-b.udemycdn.com/course/240x135/2297910_788e_2.jpg'
       alt=''
@@ -98,6 +102,8 @@
 
   <!-- Tooltip -->
   <div
+    x-show='tooltip'
+    @click.outside='tooltip = false'
     class='absolute -right-[370px] -top-[65px] z-20 max-w-[350px] border border-gray-300 bg-white p-8 text-sm'
   >
     <div class='text-xl font-bold leading-tight'>
