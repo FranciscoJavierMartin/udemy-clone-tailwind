@@ -1,0 +1,106 @@
+---
+const topics = [
+  {
+    title: 'Desarrollo',
+    subtopics: [
+      {
+        name: 'Python',
+        students: '36.354.994',
+      },
+      {
+        name: 'Desarrollo web',
+        students: '11.415.615',
+      },
+      {
+        name: 'Machine Learning',
+        students: '7.070.015',
+      },
+    ],
+  },
+  {
+    title: 'Negocios',
+    subtopics: [
+      {
+        name: 'Analisis financiero',
+        students: '1,195,282',
+      },
+      {
+        name: 'SQL',
+        students: '5.977.561',
+      },
+      {
+        name: 'PMP',
+        students: '1.733.398',
+      },
+    ],
+  },
+  {
+    title: 'IT y software',
+    subtopics: [
+      {
+        name: 'Amazon AWS',
+        students: '6.123.456',
+      },
+      {
+        name: 'Hacking ético',
+        students: '10.931.066',
+      },
+      {
+        name: 'Cyberseguridad',
+        students: '3.998.037',
+      },
+    ],
+  },
+  {
+    title: 'Diseño',
+    subtopics: [
+      {
+        name: 'Photoshop',
+        students: '10.909.736',
+      },
+      {
+        name: 'Diseño gráfico',
+        students: '3.381.052',
+      },
+      {
+        name: 'Drawing',
+        students: '2.410.849',
+      },
+    ],
+  },
+];
+---
+
+<section class='bg-gray-50 py-16'>
+  <div class='container'>
+    <h2 class='text-2xl font-bold'>Temas destacados por categoría</h2>
+    <div class='my-8 grid grid-cols-4 gap-4'>
+      {
+        topics.map((topic) => (
+          <div class='space-y-5'>
+            <h3 class='text-xl font-bold'>{topic.title}</h3>
+            {topic.subtopics.map((subtopic) => (
+              <div>
+                <a
+                  href='#'
+                  class='font-medium text-udemy underline hover:text-udemy-dark'
+                >
+                  {subtopic.name}
+                </a>
+                <div class='mt-1 text-sm text-gray-500'>
+                  {subtopic.students} estudiantes
+                </div>
+              </div>
+            ))}
+          </div>
+        ))
+      }
+    </div>
+    <a
+      href='#'
+      class='border border-primary p-3 text-sm font-semibold hover:bg-gray-200'
+    >
+      Descubrir más temas
+    </a>
+  </div>
+</section>
